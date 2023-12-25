@@ -1,0 +1,4 @@
+# BigData-Project-using-Pyspark
+
+
+Objective: The objective of this project is to provide a PySpark-based function for linear regression that can be used to evaluate the performance of linear regression models on a given dataset. This function enables developers to easily evaluate and compare different linear regression models without having to manually implement the necessary PySpark code each time, saving time and effort. Additionally, it helps developers who are unsure about the relationship between predictor and response variables in a new dataset to quickly assess if linear regression is a suitable model for the data before exploring other models. The function returns key performance metrics such as R-squared, mean squared error, and root mean squared error, which can be used to judge the effectiveness of the model.
