@@ -1,0 +1,46 @@
+def min_cost_climbing_tower(n,cost):
+    dp = [-1] * (n + 1)  # array initialization to store values
+    if n==0:
+        dp[0]=cost[0]
+    else:
+        dp[0] = cost[0]
+        dp[1] = cost[1]
+        for i in range(2, len(cost)):
+            # Calculate the minimum cost to reach step i	
+            dp[i] = min(dp[i - 1], dp[i - 2]) + cost[i]
+
+    # Calculate the total cost to reach the top
+    print("Total cost:", dp[n])
+
+    # Print the steps taken to reach the top
+    steps_taken = []
+    i = n
+    while i >= 0:
+        if dp[i] == cost[i] + dp[i - 1]:
+            steps_taken.append(i)
+            i -= 1
+        else:
+            steps_taken.append(i)
+            i -= 2	
+    steps_taken.reverse()
+    # Output the result
+    print("Start from:", steps_taken[0])
+    for i in range(1, len(steps_taken)):
+        step = steps_taken[i]
+        if step - steps_taken[i - 1] == 1:
+            print("Pay", str(cost[step - 1]), "and take 1 step, reaches step", step, ";")
+        else:
+            print("Pay", str(cost[step - 2]), "and take 2 steps, reaches step", step, ";")
+    print("Pay", str(cost[n]), "and take 1 step, reaches the top.")
+
+
+# Test the function
+n = int(input("Enter the number of steps: "))
+cost_list = []
+for i in range(0, n + 1):
+    cost = int(input(f"Enter the cost value for step {i}: "))
+    cost_list.append(cost)
+if n>=0:
+    min_cost_climbing_tower(n,cost_list)
+else:
+     print("No sufficient data")
