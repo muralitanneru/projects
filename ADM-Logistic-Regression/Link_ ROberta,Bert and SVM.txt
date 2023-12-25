@@ -1,0 +1,3 @@
+SVM: https://github.com/codehey/FInalADM2023/blob/ADM/Bias_in_SVM.ipynb
+Bert: https://github.com/Rutvik552k/Bert_model-evaluation
+Roberta: https://github.com/cjlongoria/CS522_Final_Project/blob/main/Model/bias/eda.ipynb
